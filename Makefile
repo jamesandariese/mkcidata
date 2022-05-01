@@ -2,7 +2,7 @@
 
 RELPATH := $(shell realpath .)
 
-all: version.txt
+all: mkcidata mkcidata.win32 version.txt
 always-build:
 
 version.txt: version.txt.tmpl always-build
@@ -15,8 +15,11 @@ test:
 	echo "Add tests" 1>&2
 	false
 
-mkcidata:
+mkcidata: $(wildcard *.go **/*.go)
 	go build -o mkcidata
 
-mkcidata.win32:
+mkcidata.win32: $(wildcard *.go **/*.go)
 	GOOS=windows go build -o mkcidata.win32
+
+clean:
+	rm -f mkcidata mkcidata.win32
