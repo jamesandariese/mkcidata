@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	mkiso "github.com/go-exafi/mkcidata/pkg"
+	mkiso "github.com/jamesandariese/mkcidata/pkg"
 
 	"flag"
 )

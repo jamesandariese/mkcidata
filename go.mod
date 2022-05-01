@@ -1,4 +1,4 @@
-module github.com/go-exafi/mkcidata
+module github.com/jamesandariese/mkcidata
 
 go 1.17
 
