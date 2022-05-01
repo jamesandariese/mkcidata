@@ -3,7 +3,6 @@ package mkiso
 import (
 	"flag"
 	"fmt"
-	"log"
 	"os"
 	"path"
 
@@ -65,10 +64,14 @@ func loadFiles(files []string) (int64, []ciFile, error) {
 }
 
 func CreateIso(diskImg string, files []string) error {
-	if diskImg == "" {
-		log.Fatal("must have a valid path for diskImg")
+	if flagOverwrite {
+		os.Remove(diskImg)
 	}
+
 	blockBytes, ciFiles, err := loadFiles(files)
+	if err != nil {
+		return err
+	}
 	// disk size is
 	//     the system area (32768)
 	//   + the single volume descriptor (2048)

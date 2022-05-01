@@ -2,3 +2,5 @@
 *~
 .*
 !.gitignore
+mkcidata
+mkcidata.win32

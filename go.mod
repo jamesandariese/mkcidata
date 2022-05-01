@@ -2,8 +2,10 @@ module github.com/jamesandariese/mkcidata
 
 go 1.17
 
+require github.com/diskfs/go-diskfs v1.2.0
+
 require (
-	github.com/diskfs/go-diskfs v1.2.0 // indirect
+	github.com/frankban/quicktest v1.14.3 // indirect
 	github.com/google/uuid v1.1.1 // indirect
 	github.com/pierrec/lz4 v2.3.0+incompatible // indirect
 	github.com/pkg/xattr v0.4.1 // indirect
